@@ -2,39 +2,7 @@
 <div class="text-center">
   <v-row>
     <v-col v-for="(item, index) in results" :key="index" cols="3">
-      <v-hover v-slot="{ hover }" open-delay="300">
-        <v-card>
-            <v-img
-              max-height="400"
-              class="clickable"
-              :lazy-src="`https://image.tmdb.org/t/p/w200${item.poster_path}`"
-              :src="`https://image.tmdb.org/t/p/w300${item.poster_path}`"
-              @click="goToDetails(item.id)"
-            >
-            <div>
-              <v-img v-if="hover" style="transform: scale(1.05);" :src="`https://image.tmdb.org/t/p/w300${item.poster_path}`"/>
-            </div>
-            </v-img>
-          <div class="pa-3 d-flex flex-column" style="height:150px; position:relative">
-            <v-progress-circular
-              :rotate="-90"
-              :size="50"
-              :value="(item.vote_average * 10)"
-              :color="progressColor(item.vote_average * 10)"
-              :class="hover ? 'd-none' : ''"
-              class="review-circular"
-            >
-              <span class="text-body-2 progress-caption font-weight-bold">{{ item.vote_average * 10 }}<sup>%</sup></span>
-            </v-progress-circular>
-            <div class="mt-1">
-              <v-icon dense>mdi-account-voice</v-icon>
-              <span class="text-body-2 align-middle">{{item.original_language.toUpperCase()}}</span>
-            </div>
-            <span class="font-weight-bold clickable mt-1 title-poster" @click="goToDetails(item.id)">{{item.title}}</span>
-            <span class="text-body-2 mt-1" style="color: grey">{{dateToString(item.release_date)}}</span>
-          </div>
-        </v-card>
-      </v-hover>
+      <MovieCard :item="item" type="list" />
       <span
         v-intersect.quiet="() => onIntersect()"
         v-if="index === temp && index != 0"
@@ -80,24 +48,6 @@ export default {
     ])
   },
   methods: {
-    dateToString(data) {
-      let monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "dec"]
-      let fullDate = new Date(data)
-      let month = monthShortNames[fullDate.getMonth()]
-      let date = fullDate.getDate()
-      let year = fullDate.getFullYear()
-      let dateUX = `${month} ${date}, ${year}`
-      
-      return `${dateUX}`
-    },
-    goToDetails(id) {
-      this.$router.push(`/movie/${id}`)
-    },
-    progressColor(data) {
-      if(data > 50) return 'teal'
-      else if (data >= 25 || data <= 50) return 'yellow'
-      else if (data < 25) return 'red'
-    },
     async onIntersect() {
       this.isLoading = true
       this.temp += 16

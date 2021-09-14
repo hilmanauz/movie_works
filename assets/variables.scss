@@ -6,7 +6,7 @@
 $body-font-family: 'Source Sans Pro', Arial, sans-serif;
 $heading-font-family: 'Source Sans Pro', Arial, sans-serif;
 $headings: (
-	'h1': (
+	'text-h1': (
 		'font-family': $body-font-family,
 		'size': 3.2rem, 
 		'line-height': 3.2rem,
@@ -14,7 +14,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'h2': (
+	'text-h2': (
 		'font-family': $body-font-family,
 		'size': 2rem, 
 		'line-height': 2.5rem,
@@ -22,7 +22,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'h3': (
+	'text-h3': (
 		'font-family': $body-font-family,
 		'size': 1.5rem, 
 		'line-height': 2rem,
@@ -30,7 +30,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'h4': (
+	'text-h4': (
 		'font-family': $body-font-family,
 		'size': 1.25rem, 
 		'line-height': 1.75rem,
@@ -38,7 +38,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'h5': (
+	'text-h5': (
 		'font-family': $body-font-family,
 		'size': 1.125rem, 
 		'line-height': 1.625rem,
@@ -46,7 +46,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'h6': (
+	'text-h6': (
 		'font-family': $body-font-family,
 		'size': 1rem, 
 		'line-height': 1.5rem,
@@ -54,7 +54,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'subtitle-1': ( 
+	'text-subtitle-1': ( 
 		'font-family': $heading-font-family,
 		'size': 1.25rem, 
 		'line-height': 1.75rem,
@@ -62,7 +62,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'subtitle-2': ( 
+	'text-subtitle-2': ( 
 		'font-family': $heading-font-family,
 		'size': 1.125rem, 
 		'line-height': 1.625rem,
@@ -70,7 +70,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'body-1': ( 
+	'text-body-1': ( 
 		'font-family': $heading-font-family,
 		'size': 1rem, 
 		'line-height': 1.5rem,
@@ -78,7 +78,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-	'body-2': ( 
+	'text-body-2': ( 
 		'font-family': $heading-font-family,
 		'size': 0.9375rem, 
 		'line-height': 1.4375rem,
@@ -86,7 +86,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-    'caption': ( 
+    'text-caption': ( 
 		'font-family': $heading-font-family,
 		'size': 0.875rem, 
 		'line-height': 1.325rem,
@@ -94,7 +94,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-    'button': (
+    'text-button': (
 		'font-family': $heading-font-family,
 		'size': 0.75rem, 
 		'line-height': 1.2rem,
@@ -102,7 +102,7 @@ $headings: (
 		'letter-spacing': 0em,
 		'text-transform': false
 	),
-    'overline': (
+    'text-overline': (
 		'font-family': $heading-font-family,
 		'size': 0.6875rem, 
 		'line-height': 1.1375rem,
